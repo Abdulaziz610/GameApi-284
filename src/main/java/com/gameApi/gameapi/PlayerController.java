@@ -3,6 +3,7 @@ package com.gameApi.gameapi;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 @RestController
@@ -15,5 +16,9 @@ public class PlayerController {
       //  Player newPlayer = new Player();
         listOfPlayers.add(incomingPlayer);
         return incomingPlayer;
+    }
+
+    public List<Player> getAllPLayers(){
+        return listOfPlayers;
     }
 }
