@@ -18,7 +18,14 @@ public class PlayerController {
         return incomingPlayer;
     }
 
+    @GetMapping
     public List<Player> getAllPLayers(){
         return listOfPlayers;
+    }
+
+    @GetMapping(path = "/{id}")
+    public Player getSpecificPlayer(@PathVariable String id){
+        return new Player();
+
     }
 }
