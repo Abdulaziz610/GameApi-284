@@ -6,16 +6,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.CopyOnWriteArrayList;
+
 @RestController
 @RequestMapping(path = "/api/v1/player")
 public class PlayerController {
 
-    @GetMapping
-    public String getHomePageMessage(){
-        return "MY HOME PAGE";
-    }
+    CopyOnWriteArrayList<Player> listOfPlayers = new CopyOnWriteArrayList<>();
     @PostMapping
-    public String yetAnotherMessage(){
-        return "     ";
+    public Player creatPlayer(Player incomingPlayer){
+      //  Player newPlayer = new Player();
+        listOfPlayers.add(incomingPlayer);
+        return incomingPlayer;
     }
 }
