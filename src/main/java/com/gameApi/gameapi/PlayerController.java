@@ -38,5 +38,10 @@ public class PlayerController {
         existingPlayer.name = incomingPlayer.name;
         return existingPlayer;
     }
-
+    @DeleteMapping(path = "/{id}")
+    public Player removePlayer(@PathVariable String id){
+        Player existingPlayer = getSpecificPlayer(id);
+        listOfPlayers.remove(existingPlayer);
+        return existingPlayer;
+    }
 }
