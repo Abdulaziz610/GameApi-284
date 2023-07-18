@@ -1,6 +1,7 @@
-package com.gameApi.gameapi;
+package com.gameApi.gameapi.Controllers;
 
 
+import com.gameApi.gameapi.Models.Player;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

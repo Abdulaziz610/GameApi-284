@@ -1,4 +1,4 @@
-package com.gameApi.gameapi;
+package com.gameApi.gameapi.Models;
 
 
 public class Player {
