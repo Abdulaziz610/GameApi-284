@@ -22,10 +22,24 @@ public class PlayerController {
     public List<Player> getAllPLayers(){
         return listOfPlayers;
     }
-
     @GetMapping(path = "/{id}")
     public Player getSpecificPlayer(@PathVariable String id){
-        return new Player();
-
+        Player existingPlayer = listOfPlayers.stream().filter(
+                (currPlayer) -> {
+                    return currPlayer.id.equals(id);
+                }
+        ).findFirst().get();
+        return existingPlayer;
     }
+
+
+
+
+
+
+
+
+
+
+
 }
