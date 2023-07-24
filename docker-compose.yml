@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  gapi:
+    build: .
+    ports:
+      - "8080:8080"
+    restart: on-failure
+
+  gui:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./ui:/usr/share/nginx/html
+    restart: on-failure
+    depends_on:
+      - gapi
